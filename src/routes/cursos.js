@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../config/database');
 
-// Listar todos os cursos
 router.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM cursos');
@@ -12,7 +11,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Cadastrar novo curso
 router.post('/', async (req, res) => {
   const { nome, descricao, duracao } = req.body;
   try {
@@ -26,4 +24,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router; 
+module.exports = router;
