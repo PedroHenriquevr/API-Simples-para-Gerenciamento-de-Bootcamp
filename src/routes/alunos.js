@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../config/database');
 
-// Listar todos os alunos
 router.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM alunos');
@@ -12,7 +11,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Cadastrar novo aluno
 router.post('/', async (req, res) => {
   const { nome, email, idade } = req.body;
   try {
